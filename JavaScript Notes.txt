@@ -1,0 +1,278 @@
+===========================================================
+Values and variables:
+A value is data (numbers, strings, booleans, objects, etc.). A variable is a named container that holds a value.
+
+To assign a value to a variable use the assignment operator =. Examples:
+let x = 5;
+const name = 'Yahya';
+var isActive = true;
+
+You can reassign let and var:
+x = 10; // ok for let and var
+But const cannot be reassigned:
+name = 'Ali'; // Error
+
+//Differences between var, let, and const:
+//- var: function-scoped, can be redeclared and //reassigned, hoisted (initialized with undefined).
+//- let: block-scoped, can be reassigned but not //redeclared in the same scope, hoisted but not //initialized (temporal dead zone).
+//- const: block-scoped, must be initialized at //declaration, cannot be reassigned (but objects/arrays //declared with const can have their contents mutated).
+//but what is a block scope?
+//A block scope is a section of code enclosed within curly braces {}. Variables declared with let or const inside a block are only accessible within that block and its nested blocks.
+//For example, variables declared inside an if statement or a for loop are block-scoped.
+//but what is function scope?
+//Function scope means that variables declared with var inside a function are only accessible within that function. They cannot be accessed from outside the function.
+//For example, if you declare a variable with var inside a function, it cannot be accessed from the global scope or from other functions.
+//So the main difference is that var is function-scoped while let and const are block-scoped.
+//So in summary, var is function-scoped and can be redeclared, let is block-scoped and cannot be redeclared, and const is block-scoped and cannot be reassigned.
+
+And "var" and "let" each stand for?
+They both declare variables. "var" is the older, function-scoped keyword; "let" (introduced in ES6) declares a block-scoped variable. 
+
+//camel case notation is used in javascript which means the first word is in lowercase and the first letter of each subsequent word is capitalized. like this isCamelCaseNotation
+
+#variables names can contain letters, digits, underscores and dollar signs
+
+variables must be defined before usage unlike python 
+
+also u cant use reserved words like datatypes or function names
+
+also fowlloing camel case notation we cant start a variable name witha  capital letter as in OOP it is used for defining classes
+
+writing a variable all in upper case mean that tbhis variable hold a value that should be constant and will never change
+also the ediotr will change its color to show the difference(theme difference)
+
+variables name must be descriptive
+
+//data types divided into primitive and objects , where primitive are : number , string , boolean , undefined , null , symbol , bigint
+//examples of each :
+let age = 25; //number
+let name = "John"; //string
+let isStudent = true; //boolean
+let address; //undefined , which is a variabile that has been declared but not assigned a value yet
+let phoneNumber = null; //null
+let uniqueId = Symbol("id"); //symbol
+let bigNumber = 9007199254740991n; //bigint(more bytes than normal int)
+
+we dont have to define data types as in c++/c
+
+//comment single line
+
+/*
+multi
+line
+comment
+*/
+
+typeof here is not a function but an operator which show the type of variable rightnow
+
+console.log(typeof true);// where type of operator is used to know the data type of the variable compared to python it is here not a function but an operator
+// where operators here are used to perform operations on variables and values different from functions that are used to perform tasks
+//but how different typeof to + and -?
+// + and - are arithmetic operators used to perform mathematical calculations on numbers
+// while typeof is a unary operator used to return the data type of a variable or value
+//but if it return doesnt that make it a function?
+// no because it doesnt perform a task it just returns the data type of the variable or value
+
+===========================================================
+Variables and declaration:
+we declare variables using let keyword
+you cant use const without defination /intialization as it will cause error
+
+// + and - are arithmetic operators used to perform mathematical calculations on numbers
+//example:
+// addition
+let sum = 10 + 5; // sum is 15
+// subtraction
+let difference = 10 - 5; // difference is 5
+// ** exponentiation
+let power = 2 ** 3; // power is 8 (2 raised to the power of 3)
+// multiplication
+let product = 10 * 5; // product is 50
+// division
+let quotient = 10 / 5; // quotient is 2
+// modulus
+let remainder = 10 % 3; // remainder is 1
+
+// the console log works as print in python where 
+// it prints the value to the console even it can add values together and print the result
+// for example console.log(40 + 8 + 23 - 10); will print 61 to the console
+// also print string + number + string will concatenate the values and print them as a single string
+// for example console.log("I am " + 23 + " years old"); will print I am 23 years old to the console
+// this is called type coercion
+
+as in c++ , variable++ or -- works fine but better keep as much consistency between langauges which is += , -=
+
+
+// comparison operators
+//  >, <, >=, <=, ===, !==
+// example
+// console.log(10 > 5); // true
+// console.log(10 === 10); // true
+// console.log(10 !== 5); // true
+
+
+// operator precedence
+// In JavaScript, operator precedence determines the order in which operators are evaluated in expressions.
+// For example, in the expression 2 + 3 * 4, the multiplication operator (*) has higher precedence than the addition operator (+),
+// so the multiplication is performed first, resulting in 2 + 12, which equals 14.
+// precednce in order from highest to lowest including the comparison operators and all other operators:
+// 1. Parentheses ()
+// 2. Exponentiation **
+// 3. Multiplication *, Division /, and Modulus %
+// 4. Addition + and Subtraction -
+// 5. Comparison operators (==, !=, ===, !==, >, <, >=, <=)
+// 6. Logical operators (&&, ||, !)
+// 7. Assignment (=)
+// In the expression 3 + 4 * 5 > 20, the multiplication is performed first (4 * 5 = 20),
+// then the addition (3 + 20 = 23), and finally the comparison (23 > 20), which evaluates to true.
+// So the final result of the expression is true.
+// In this example, the + and - operators have lower precedence than the typeof operator,
+// so the typeof operator is evaluated first to determine the type of the variable or value,
+// and then the + and - operators are applied to perform arithmetic operations if needed.  
+
+// MDN is a website used ofr javascript doc. refrencing
+
+// as in python and c++  u can do x =y =25;
+
+// for example console.log("I am " + 23 + " years old"); will print I am 23 years old to the console
+// this is called type coercion
+
+===========================================================
+templates literals:
+
+const jonasNew = `i'm ${firstname} , a ${year - birthyear}` //as in python with f formater
+
+backticks : `` can be used instead of quotes for all strings
+
+new lines :
+
+console.log('string \n\
+multiple \n\
+lines')
+while with back sticks :
+
+`
+string 
+multiple
+lines`
+
+===========================================================
+Decisions:
+if statement
+
+if () {}
+else {}
+
+//control structure
+
+for decimal control :
+In JavaScript, .f is not a valid way to format numbers — you should use .toFixed() instead.
+
+===========================================================
+Type Conversion and Coercion:
+conversion : like casting to change data types
+
+const inputyear = "1991"
+console.log(Number(inputyear));
+console.log(Number(inputyear)+18);
+
+console.log(Number("gfdgh"));//NaN not a number
+
+console.log(String(23))//"23"
+
+type coercion:
+it converts the values automatically to get a valid output but not with all operators
+
+so it converts numbers to strings it use +
+but to change strings to numbers it happens with - ,* ,/
+===========================================================
+Truthly and falsy:
+// 5 falsy values:
+0,'',undefined,null,NaN,false
+
+rest are truthly values
+
+console.log(Boolean(0));//false
+console.log(Boolean(undefined));//false
+console.log(Boolean('Jonas'));//true
+console.log(Boolean({}));//true ,empty object
+===========================================================
+Equality Operators == vs ===:
+=== comparison operator  (strict equality operator) as it doesnt     
+!==    perform type coercion
+
+== this one same as previouse but it do type coercion
+!=
+prompt function is used to get input from the user in the webpage
+it receive it in the form of string
+
+
+
+===========================================================
+Boolean operators:
+AND OR NOT (LOGIC Operators)
+
+Same as in C it does have both logical operators and bitwise operators:
+Operation	    Syntax	    Works On	Description
+Logical AND	    &&	        booleans	true if both are true
+Logical OR	    ||	        	        ||
+Logical NOT	    !	        boolean	    negates value
+
+
+Operation	    JavaScript syntax	    Description
+Bitwise AND	    &	                    1 if both bits are 1
+Bitwise OR	    |	                    |
+Bitwise XOR	    ^	                    1 if bits are different
+Bitwise NOT	    ~	                    Inverts bits
+Left Shift	    <<	                    Shifts bits left
+Right Shift	    >>	                    Arithmetic (keeps sign)
+Unsigned        >>>	                    Logical (fills with zeros)
+Right Shift	
+
+300 >= bill && bill >= 50
+
+unlike python you cant remove the && to have a single line comparison
+===========================================================
+Switch:
+//switch stament
+// can be initiated like this:
+// switch (expression) {
+//   case value1:
+//     // code to be executed if expression === value1 
+//     break;
+//   case value2:
+//     // code to be executed if expression === value2
+//     break;
+//   ...
+//   default:
+//     // code to be executed if expression doesn't match any case
+// }
+// where expression can be of any data type
+// and the values in each case should be of the same data type as the expression
+// the break statement is used to exit the switch statement once a case is matched
+// if break is omitted, the code will continue to execute the next cases until a break is encountered or the switch ends
+// the default case is optional and will be executed if none of the cases match the expression
+
+//difference between a statment and expression:
+// the main difference between a statement and an expression is that an expression produces a value, while a statement performs an action.
+// For example, 3 + 4 is an expression because it produces the value 7, while if (true) { console.log("Hello"); } is a statement because it performs the action of logging "Hello" to the console without producing a value.
+
+
+//template literals expect an expression not a statment
+
+// the conditional ternary operator:
+// condition ? expressionIfTrue : expressionIfFalse;
+// it is the only operator that takes three operands
+// it is used to evaluate a condition and return one of two values based on whether the condition is true or false
+// example:
+let age = 23;
+age >= 18 ? console.log("I like to drink wine 🍷") : console.log("I like to drink water 💧");
+
+// an operator is an expression that produces a value
+===========================================================
+to change the java script versions we use a process called transpiling and polyfiling through an app called babel
+===========================================================
+Section 2:
+Strict Mode:
+
+
